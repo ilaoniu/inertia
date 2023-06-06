@@ -62,7 +62,7 @@ const Head: InertiaHead = defineComponent({
         : node.children.reduce((html, child) => html + this.renderTag(child), '')
     },
     renderTag(node) {
-      if (node.type.toString() === 'Symbol(Text)') {
+      if (node.type.toString() === 'Symbol(Text)' || node.type.toString() === 'Symbol(v-txt)') {
         return node.children
       } else if (node.type.toString() === 'Symbol()') {
         return ''
